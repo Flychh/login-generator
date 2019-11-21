@@ -15,7 +15,19 @@ public class TestsLoginGenerator {
 
     @Test
     public void ajoutLoginGenerator(){
-        String loginGenerer = logGen.generateLoginForNomAndPrenom("Durand","Pierre");
+        String loginGenerer = logGen.generateLoginForNomAndPrenom("Rolling","Jean");
+        Assert.assertEquals("JROL1", loginGenerer);
+    }
+
+    @Test
+    public void accentLoginGenerator(){
+        String loginGenerer = logGen.generateLoginForNomAndPrenom("Dùrand","Pierre");
         Assert.assertEquals("PDUR", loginGenerer);
+    }
+
+    @Test
+    public void testLoginDoubleLogGen(){
+        String loginDouble = logGen.generateLoginForNomAndPrenom("Ralling", "John");
+        Assert.assertEquals("JRAL2", loginDouble);
     }
 }
