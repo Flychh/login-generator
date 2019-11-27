@@ -30,4 +30,10 @@ public class TestsLoginGenerator {
         String loginDouble = logGen.generateLoginForNomAndPrenom("Ralling", "John");
         Assert.assertEquals("JRAL2", loginDouble);
     }
+
+    @Test
+    public void testLoginNom2Caract(){
+        String login = logGen.generateLoginForNomAndPrenom("Du", "Paul");
+        Assert.assertEquals("PDU", login);
+    }
 }
